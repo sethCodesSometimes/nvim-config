@@ -3,16 +3,16 @@
 -- Add any additional keymaps here
 
 return {
-  {
-    -- Only needed if you're not already using which-key in this file
-    "folke/which-key.nvim",
-    opts = function(_, opts)
-      opts.defaults["<leader>h"] = {
-        function()
-          require("snacks.dashboard").open()
-        end,
-        "Open Snacks Dashboard",
-      }
-    end,
-  },
+  -- {
+  --   -- Only needed if you're not already using which-key in this file
+  --   "folke/which-key.nvim",
+  --   opts = function(_, opts)
+  --     opts.defaults["<leader>h"] = {
+  --       function()
+  --         require("snacks.dashboard").open()
+  --       end,
+  --       "Open Snacks Dashboard",
+  --     }
+  --   end,
+  -- },
 }
