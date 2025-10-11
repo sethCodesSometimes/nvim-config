@@ -1,6 +1,6 @@
-return {
-  {
-    "edte/normal-colon.nvim",
-    opts = {},
-  },
-}
+-- return {
+--   {
+--     "edte/normal-colon.nvim",
+--     opts = {},
+--   },
+-- }
