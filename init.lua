@@ -12,6 +12,8 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
       vim.cmd("w !sudo tee % >/dev/null")
     end, {})
     vim.opt.foldenable = true
+
+    --- transparency stuff
     local transparency = true
     if transparency then
       -- Apply it to terminal-related groups
@@ -55,5 +57,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
       -- cursor line number
       vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
     end
+
+    --- line number thing
   end,
 })
