@@ -3,16 +3,13 @@
 -- Add any additional keymaps here
 
 return {
-  -- {
-  --   -- Only needed if you're not already using which-key in this file
-  --   "folke/which-key.nvim",
-  --   opts = function(_, opts)
-  --     opts.defaults["<leader>h"] = {
-  --       function()
-  --         require("snacks.dashboard").open()
-  --       end,
-  --       "Open Snacks Dashboard",
-  --     }
-  --   end,
-  -- },
+  -- in lua/config/keymaps.lua or after the lazy setup
+  -- Source - https://stackoverflow.com/a/
+  -- Posted by GAVD
+  -- Retrieved 2025-11-11
+  -- License - CC BY-SA 4.0
+
+  -- Normal mode delete to beginning/end of word
+  vim.keymap.set("n", "<C-BS>", "db", { silent = true, desc = "delete backward to beginning of word" }),
+  vim.keymap.set("n", "<C-Del>", "de", { silent = true, desc = "delete forward to end of word" }),
 }

@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
     vim.opt.foldenable = true
 
     --- transparency stuff
-    local transparency = true
+    local transparency = false
     if transparency then
       -- Apply it to terminal-related groups
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = bg })
@@ -56,6 +56,34 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
 
       -- cursor line number
       vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+
+      -- other stuff idk
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+
+      -- -- gutter (i hardly know her)
+      -- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" }) -- optional
+      -- vim.set_hl(0, "CursorLineNr", { bg = "none" })
+      for _, group in ipairs({
+        "SignColumn",
+        "FoldColumn",
+        "LineNr",
+        "CursorLineNr",
+        "GitSignsAdd",
+        "GitSignsChange",
+        "GitSignsDelete",
+        "DiagnosticSignError",
+        "DiagnosticSignWarn",
+        "DiagnosticSignInfo",
+        "DiagnosticSignHint",
+      }) do
+        vim.api.nvim_set_hl(0, group, { bg = "none" })
+      end
+      -- restore readable line numbers
+      vim.api.nvim_set_hl(0, "LineNr", { fg = "#555555", bg = "none" })
+      vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff", bg = "none", bold = true })
     end
 
     --- line number thing

@@ -1,8 +1,15 @@
 return {
+  {
+    "franbach/miramare",
+    priority = 1000,
+    config = function(_, opts)
+      vim.cmd("colorscheme miramare")
+    end,
+  },
   -- Kanagawa (active)
   {
     "rebelot/kanagawa.nvim",
-    priority = 1000,
+    priority = 10,
     opts = {
       theme = "dragon",
       transparent = false,
@@ -51,10 +58,6 @@ return {
         }
       end,
     },
-    config = function(_, opts)
-      require("kanagawa").setup(opts)
-      vim.cmd("colorscheme kanagawa-dragon")
-    end,
   },
 
   -- Gruvbox (installed but not active)
