@@ -16,5 +16,11 @@ return {
         ---@type snacks.dashboard.Item[]
       },
     },
+    -- picker = {
+    --   preview = "main",
+    --   layout = {
+    --     preset = "vertical",
+    --   },
+    -- },
   },
 }

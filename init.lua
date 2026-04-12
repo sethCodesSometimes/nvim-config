@@ -87,5 +87,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
     end
 
     --- line number thing
+    --- --- harper
+    --- require("lspconfig").harper_ls.setup({})
   end,
 })

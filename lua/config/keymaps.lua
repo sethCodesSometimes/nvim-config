@@ -12,4 +12,5 @@ return {
   -- Normal mode delete to beginning/end of word
   vim.keymap.set("n", "<C-BS>", "db", { silent = true, desc = "delete backward to beginning of word" }),
   vim.keymap.set("n", "<C-Del>", "de", { silent = true, desc = "delete forward to end of word" }),
+  vim.keymap.set("n", "<leader>uH", vim.diagnostic.open_float, { desc = "Float diagnostic" }),
 }
