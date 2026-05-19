@@ -8,7 +8,7 @@ return {
     "rebelot/kanagawa.nvim",
     opts = {
       theme = "dragon",
-      transparent = false,
+      transparent = true,
       overrides = function(colors)
         local palette = colors.palette
         return { --- found these options from a guy on reddit,

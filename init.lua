@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
     vim.opt.foldenable = true
 
     --- transparency stuff
-    local transparency = false
+    local transparency = true
     if transparency then
       -- Apply it to terminal-related groups
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = bg })
