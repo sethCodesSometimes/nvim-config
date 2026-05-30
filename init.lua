@@ -2,92 +2,20 @@
 require("config.lazy")
 vim.o.autochdir = true
 vim.o.shell = "/bin/fish"
-vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
-  callback = function()
-    -- Get background colour of normal buffers
-    local normal = vim.api.nvim_get_hl(0, { name = "Normal", link = false })
-    local bg = normal.bg
 
-    vim.api.nvim_create_user_command("W", function()
-      vim.cmd("w !sudo tee % >/dev/null")
-    end, {})
-    vim.opt.foldenable = true
+vim.api.nvim_create_user_command("W", function()
+  vim.cmd("w !sudo tee % >/dev/null")
+end, {})
 
-    --- transparency stuff
-    local transparency = true
-    if transparency then
-      -- Apply it to terminal-related groups
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = bg })
-      vim.api.nvim_set_hl(0, "TermNormal", { bg = bg })
-      vim.api.nvim_set_hl(0, "TermNormalNC", { bg = bg })
-      vim.api.nvim_set_hl(0, "FloatBorder", { bg = bg }) -- optional: match border bg too
-      -- base text
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.opt.foldenable = true
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  vim.o.guifont = "Maple Mono NF:h10" -- text below applies for VimScript
+  vim.g.neovide_opacity = 0.8
+  vim.g.neovide_normal_opacity = 0.8
 
-      -- line/column highlights
-      vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
-      vim.api.nvim_set_hl(0, "CursorColumn", { bg = "none" })
+  vim.g.neovide_window_blurred = true
 
-      -- window borders & splits
-      vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
-      vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none" })
-
-      -- popup menus
-      vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
-      vim.api.nvim_set_hl(0, "PmenuSel", { bg = "none" })
-
-      -- telescope / fzf / other pickers (common)
-      vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
-      vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "TelescopePrompt", { bg = "none" })
-      vim.api.nvim_set_hl(0, "TelescopeResults", { bg = "none" })
-      vim.api.nvim_set_hl(0, "TelescopePreview", { bg = "none" })
-
-      -- diagnostic floating windows
-      vim.api.nvim_set_hl(0, "DiagnosticFloatingError", { bg = "none" })
-      vim.api.nvim_set_hl(0, "DiagnosticFloatingWarn", { bg = "none" })
-      vim.api.nvim_set_hl(0, "DiagnosticFloatingInfo", { bg = "none" })
-      vim.api.nvim_set_hl(0, "DiagnosticFloatingHint", { bg = "none" })
-
-      -- bottom bar thing
-      vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
-      vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
-
-      -- cursor line number
-      vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
-
-      -- other stuff idk
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-
-      -- -- gutter (i hardly know her)
-      -- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-      -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-      -- vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" }) -- optional
-      -- vim.set_hl(0, "CursorLineNr", { bg = "none" })
-      for _, group in ipairs({
-        "SignColumn",
-        "FoldColumn",
-        "LineNr",
-        "CursorLineNr",
-        "GitSignsAdd",
-        "GitSignsChange",
-        "GitSignsDelete",
-        "DiagnosticSignError",
-        "DiagnosticSignWarn",
-        "DiagnosticSignInfo",
-        "DiagnosticSignHint",
-      }) do
-        vim.api.nvim_set_hl(0, group, { bg = "none" })
-      end
-      -- restore readable line numbers
-      vim.api.nvim_set_hl(0, "LineNr", { fg = "#555555", bg = "none" })
-      vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff", bg = "none", bold = true })
-    end
-
-    --- line number thing
-    --- --- harper
-    --- require("lspconfig").harper_ls.setup({})
-  end,
-})
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+end

@@ -2,18 +2,18 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      servers = {
-        pyright = {
-          settings = {
-            python = {
-              analysis = {
-                typeCheckingMode = "off",
-                diagnosticMode = "openFilesOnly",
-              },
-            },
-          },
-        },
-      },
+      -- servers = {
+      --   pyright = {
+      --     settings = {
+      --       python = {
+      --         analysis = {
+      --           typeCheckingMode = "off",
+      --           diagnosticMode = "openFilesOnly",
+      --         },
+      --       },
+      --     },
+      --   },
+      -- },
     },
   },
 }
