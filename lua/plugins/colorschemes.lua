@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "gruvbox-material",
     },
   },
   -- Additional color schemes (lazy-loaded, available via :colorscheme)
@@ -11,4 +11,6 @@ return {
   { "rebelot/kanagawa.nvim" },
   { "rose-pine/neovim", name = "rose-pine" },
   { "ellisonleao/gruvbox.nvim" },
+  { "talha-akram/noctis.nvim" },
+  { "sainnhe/gruvbox-material" },
 }
