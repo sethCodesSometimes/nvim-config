@@ -17,17 +17,5 @@ return {
 ▀▀ █▪ ▀▀▀  ▀█▄▀▪. ▀  ▀▀ ▀▀  █▪▀▀▀]],
       },
     },
-    -- stylua: ignore
-    picker = {
-      sources = {
-        files = {
-          root_patterns = { ".root", ".git", ".hg", ".svn" },
-        },
-      },
-    },
-    -- root detection used across snacks (picker, git, etc.)
-    root = {
-      patterns = { ".root", ".git", ".hg", ".svn" },
-    },
   },
 }
