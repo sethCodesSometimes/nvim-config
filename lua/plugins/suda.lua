@@ -1,6 +1,7 @@
 return {
   {
     "lambdalisue/vim-suda",
+    enabled = false,
     config = function()
       -- optional: make `:w` use suda automatically if no permission
       vim.g.suda_smart_edit = 1

@@ -1,6 +1,7 @@
 return {
   "jiaoshijie/undotree",
   -- @module 'undotree.collector'
+  enabled = false,
   -- @type UndoTreeCollector.Opts
   opts = {
     -- your options
